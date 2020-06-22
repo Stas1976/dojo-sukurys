@@ -1,0 +1,72 @@
+.burger-button {
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__label {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $color-red;
+    height: 7rem;
+    width: 7rem;
+    box-shadow: 0 1rem 3rem rgba($color-black, .1);
+    text-align: center;
+    cursor: pointer;
+    z-index: 50;
+    transition: top 0.3s;
+  }
+
+  &__icon {
+    position: relative;
+    margin-top: 3.5rem;
+
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-white;
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all .2s;
+    }
+
+    &::before {
+      top: -.8rem;
+    }
+
+    &::after {
+      top: .8rem;
+    }
+  }
+
+  &__label:hover &__icon::before {
+    top: -1rem
+  }
+
+  &__label:hover &__icon::after {
+    top: 1rem
+  }
+
+  &__checkbox:checked+&__label &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked+&__label &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked+&__label &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+}

@@ -1,0 +1,19 @@
+@import "./abstraction/base";
+@import "./abstraction/mixin";
+@import "./abstraction/utilities";
+@import "./abstraction/vars";
+
+@import "../app/app";
+@import "../nav/navbar";
+
+@import "../components/BurgerButton/burger-button";
+@import "../components/Inputs/inputs";
+@import "../components/Button/button";
+@import "../components/PhotoPreview/photo-preview";
+@import "../components/Modal/modal";
+@import "../components/PopUp/pop-up";
+
+@import "../container/Card/card-container";
+
+@import "../pages/Groups/groups";
+@import "../pages/Coaches/coaches";

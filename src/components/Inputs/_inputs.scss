@@ -1,0 +1,114 @@
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 60rem;
+  margin: 1rem auto;
+
+  &__custom {
+    width: 35rem;
+    height: 5rem;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 4px;
+    outline: none;
+    padding: 0 1rem;
+    font-size: $default-font-size;
+
+    &--textarea {
+      height: 8rem;
+    }
+
+    &--date {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__radioBtn {
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 35rem;
+
+    &--btn {
+      margin: 0 1rem;
+    }
+  }
+
+  &__checkbox {
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 35rem;
+
+    &--box {
+      margin: 0 1rem;
+    }
+  }
+
+  &__select {
+    position: relative;
+  }
+
+  &__select select {
+
+    width: 35rem;
+    border-radius: 4px;
+    height: 5rem;
+    font-size: $default-font-size;
+    margin-bottom: 1rem;
+  }
+
+  &__select-custom {}
+
+
+  &__error {
+    position: absolute;
+    // right: -22rem;
+    top: 4rem;
+    color: red;
+    font-weight: 700;
+  }
+}
+
+.photo-input {
+  display: flex;
+  width: 100%;
+  max-width: 60rem;
+  padding: 0;
+  margin: 2rem 0;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  // color: $color-white;
+
+  &__icon {
+    margin-top: 1rem;
+  }
+
+  &__user-icon {
+    height: 10rem;
+    border-radius: 4px;
+  }
+
+  &__component {
+    display: flex;
+  }
+
+  &__dropzone {
+    height: 10rem;
+    width: 24rem;
+    margin-left: 1rem;
+    background-color: $color-red;
+    border-radius: 4px;
+
+    &--isActive {
+      background-color: $color-green;
+    }
+  }
+}

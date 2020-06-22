@@ -1,0 +1,15 @@
+.myModal {
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background: white;
+  border-radius: 1rem;
+  text-align: center;
+  font-size: $default-font-size;
+  background-color: $color-green;
+  opacity: 0.8;
+  color: $color-white;
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+}

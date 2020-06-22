@@ -1,0 +1,37 @@
+.groups {
+  font-size: $default-font-size;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: auto;
+  }
+
+  &__list-item {
+    width: 25rem;
+    height: 16rem;
+    padding: 1rem;
+    margin: 2rem;
+    border: 1px solid $color-primary-light;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-hover-bkg;
+    }
+
+    &--h {
+      height: 7rem;
+    }
+
+    &--p {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.group {
+  font-size: $default-font-size;
+}

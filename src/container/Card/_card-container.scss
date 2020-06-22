@@ -1,0 +1,56 @@
+.card-container {
+  width: 75rem;
+  margin: 2rem auto;
+  border-bottom: 3px solid $color-red;
+  font-size: $default-font-size;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  &__links {
+    width: 75rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: $color-red;
+  }
+
+  &__coach-link {
+    margin: 0.5rem 0;
+    font-weight: 700;
+    color: $color-red;
+    text-decoration: underline;
+  }
+
+  &__link-item {
+    color: $color-white;
+    font-weight: 600;
+    padding: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-red-dark;
+    }
+  }
+
+  &__icon {
+    color: $color-red;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__info {
+    text-align: left;
+    width: 40rem;
+    padding-left: .5rem;
+  }
+
+  &__name {
+    text-align: left;
+    width: 15rem;
+    padding-left: .5rem;
+  }
+}

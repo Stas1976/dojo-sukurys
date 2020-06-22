@@ -1,17 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import { ReactReduxFirebaseProvider } from "react-redux-firebase";
+import { Provider } from "react-redux";
+import { BrowserRouter as Router } from "react-router-dom";
+
+import "./scss/main.scss";
+import { store, rrfProps } from "./redux/store";
+
+import App from "./app";
+import ScrollToUp from "./components/ScrollToUp/";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <ReactReduxFirebaseProvider {...rrfProps}>
+        <Router>
+          <ScrollToUp />
+          <App />
+        </Router>
+      </ReactReduxFirebaseProvider>
+    </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();

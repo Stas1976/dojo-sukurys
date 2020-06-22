@@ -1,0 +1,105 @@
+.navbar {
+  position: relative;
+  margin-bottom: 3rem;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 7rem;
+    height: 100%;
+    width: 25rem;
+    background-color: $color-red;
+    color: $color-white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-align: left;
+    padding-top: 7rem;
+    z-index: 10;
+  }
+
+  &__container-enter {
+    width: 0;
+    opacity: 0;
+  }
+
+  &__container-enter-active {
+    width: 25rem;
+    opacity: 1;
+    transition: opacity 300ms, width 300ms;
+  }
+
+  &__container-exit {
+    width: 25rem;
+    opacity: 1;
+  }
+
+  &__container-exit-active {
+    width: 0;
+    opacity: 0;
+    transition: opacity 300ms, width 300ms;
+  }
+
+  &__item {
+    margin: 0;
+    border-bottom: 1px solid $color-white;
+    height: 7rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+
+    &--active {
+      background-color: $color-red-dark;
+    }
+
+    &:hover {
+      background-color: $color-red-bluer;
+    }
+  }
+
+  &__side-bar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 7rem;
+    left: 0;
+    width: 7rem;
+    height: 100%;
+    background-color: $color-red;
+    color: $color-white;
+    z-index: 10;
+  }
+
+  &__icon {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7rem;
+    width: 100%;
+    border-bottom: 1px solid $color-white;
+
+    &:hover {
+      background-color: $color-red-bluer;
+    }
+  }
+
+  // &__admin-dashboard {
+  //   position: relative;
+  //   top: 15rem;
+  //   margin: auto;
+  //   width: 25rem;
+  //   height: 20rem;
+  //   padding-top: 5rem;
+  //   background-color: $color-primary-light;
+  //   z-index: 100;
+  // }
+
+  // &__new-account {
+  //   color: $color-red;
+  //   cursor: pointer;
+  // }
+}

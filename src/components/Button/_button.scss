@@ -1,0 +1,24 @@
+.custom-button {
+  background-color: $color-green;
+  font-weight: 600;
+  width: 20rem;
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 4px;
+  cursor: pointer;
+  color: $color-white;
+  outline: none;
+  border: none;
+
+  &__warning {
+    background-color: $color-red;
+  }
+
+  &:disabled {
+    background-color: $color-green-disabled;
+
+    &:hover {
+      cursor: no-drop
+    }
+  }
+}

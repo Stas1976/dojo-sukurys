@@ -1,0 +1,18 @@
+.coaches {
+  font-size: $default-font-size;
+
+  &__link {
+    width: 25vw;
+    margin-left: 73vw;
+    &--link {
+      color: $color-red;
+    }
+    &--header {
+      text-decoration: underline;
+
+      &:hover {
+        background-color: $color-hover-bkg;
+      }
+    }
+  }
+}
