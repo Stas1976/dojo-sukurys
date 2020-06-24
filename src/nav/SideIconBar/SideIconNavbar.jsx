@@ -5,9 +5,9 @@ import NavItem from "../NavItem/NavItem";
 const SideIconsBar = () => {
   return (
     <div className="navbar__side-bar">
-      <NavItem exact link={ROUTES.HOME}>
+      {/* <NavItem exact link={ROUTES.HOME}>
         <i className="navbar__icon fas fa-home fa-4x"></i>
-      </NavItem>
+      </NavItem> */}
       <NavItem exact link={ROUTES.MEMBERS}>
         <i className="navbar__icon fas fa-user fa-4x"></i>
       </NavItem>

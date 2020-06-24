@@ -6,9 +6,9 @@ import NavItem from "../NavItem/NavItem";
 const NavItemsList = () => {
   return (
     <div className="navbar__container">
-      <NavItem exact link={ROUTES.HOME}>
+      {/* <NavItem exact link={ROUTES.HOME}>
         <div className="navbar__item">pagrindinis</div>
-      </NavItem>
+      </NavItem> */}
       <NavItem link={ROUTES.MEMBERS}>
         <div className="navbar__item">klubo nariai</div>
       </NavItem>

@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 
 import * as ROUTES from "../constants/routes";
 import NavBar from "../nav";
-import Home from "../pages/Home";
+// import Home from "../pages/Home";
 // import NewMember from "../pages/NewMember/NewMember";
 import Groups from "../pages/Groups/Groups";
 import Group from "../pages/Groups/Group/Group";
@@ -25,7 +25,7 @@ const App = () => {
       {/* <TransitionGroup>
         <CSSTransition> */}
       <Switch>
-        <Route exact path={ROUTES.HOME} component={Home} />
+        {/* <Route exact path={ROUTES.MEMBERS} component={ClubMemberList} /> */}
         <Route exact path={ROUTES.MEMBERS} component={ClubMemberList} />
         <Route exact path={ROUTES.CREATE_NEW_MEMEBER} component={MemberForm} />
         <Route

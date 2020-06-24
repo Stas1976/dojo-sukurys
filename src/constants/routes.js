@@ -17,7 +17,7 @@ export const CREATE_NEW_GROUP = "/createnewgroup";
 
 //! member routes
 export const CREATE_NEW_MEMEBER = "/createnewmember";
-export const MEMBERS = "/members";
+export const MEMBERS = "/";
 export const MEMBER_STATISTIC = "/memberstatistic";
 export const MEMBER_EXAM = "/memberexams";
 export const MEMBER_EDIT = "/memberedit";
