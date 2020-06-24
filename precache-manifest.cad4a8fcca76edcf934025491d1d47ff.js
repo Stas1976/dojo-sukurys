@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "40f1801a5ddba643e020388cf60b099d",
+    "revision": "ded4882be3e78619e839862cd26504a3",
     "url": "/dojo-sukurys/index.html"
   },
   {
-    "revision": "7d87a2db4a7909b338fe",
+    "revision": "3cb86b52bf8141f448c5",
     "url": "/dojo-sukurys/static/css/main.7a02b1fe.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dojo-sukurys/static/js/2.87e3d405.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7d87a2db4a7909b338fe",
-    "url": "/dojo-sukurys/static/js/main.a3f3f6bb.chunk.js"
+    "revision": "3cb86b52bf8141f448c5",
+    "url": "/dojo-sukurys/static/js/main.86d7052b.chunk.js"
   },
   {
     "revision": "c83b4bf92aa26c7df166",
