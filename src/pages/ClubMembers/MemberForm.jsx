@@ -90,7 +90,7 @@ const NewMemberForm = (props) => {
     firestore
       .delete({ collection: collection, doc: doc })
       .then(() => {
-        history.push("/");
+        history.push("/dojo-sukurys");
         console.log("Doc deleted");
       })
       .catch((err) => console.log(err));
