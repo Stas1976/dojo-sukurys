@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/dojo-sukurys/static/css/main.7a02b1fe.chunk.css",
+    "main.js": "/dojo-sukurys/static/js/main.a3f3f6bb.chunk.js",
+    "main.js.map": "/dojo-sukurys/static/js/main.a3f3f6bb.chunk.js.map",
+    "runtime-main.js": "/dojo-sukurys/static/js/runtime-main.9443f614.js",
+    "runtime-main.js.map": "/dojo-sukurys/static/js/runtime-main.9443f614.js.map",
+    "static/js/2.87e3d405.chunk.js": "/dojo-sukurys/static/js/2.87e3d405.chunk.js",
+    "static/js/2.87e3d405.chunk.js.map": "/dojo-sukurys/static/js/2.87e3d405.chunk.js.map",
+    "index.html": "/dojo-sukurys/index.html",
+    "precache-manifest.773fb39f844fc91e13701eddb9b5de5a.js": "/dojo-sukurys/precache-manifest.773fb39f844fc91e13701eddb9b5de5a.js",
+    "service-worker.js": "/dojo-sukurys/service-worker.js",
+    "static/css/main.7a02b1fe.chunk.css.map": "/dojo-sukurys/static/css/main.7a02b1fe.chunk.css.map",
+    "static/js/2.87e3d405.chunk.js.LICENSE.txt": "/dojo-sukurys/static/js/2.87e3d405.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9443f614.js",
+    "static/js/2.87e3d405.chunk.js",
+    "static/css/main.7a02b1fe.chunk.css",
+    "static/js/main.a3f3f6bb.chunk.js"
+  ]
+}
