@@ -1,5 +1,5 @@
 //! main routes
-export const HOME = "/";
+export const HOME = "/dojo-sukurys";
 export const SHEDULER = "/sheduler";
 export const SETTINGS = "/settings";
 export const SEMINARS = "/seminars";
