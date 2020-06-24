@@ -14,7 +14,7 @@ import {
   FS_COACH,
   FS_GROUPS,
 } from "../../constants/fireStoreColections";
-import { coaches, memberValidationSchema, group } from "../../db";
+import { coaches, memberValidationSchema } from "../../db";
 
 import {
   Button,
@@ -71,7 +71,7 @@ const NewMemberForm = (props) => {
     }
   }, [selector.groups]);
 
-  let memberForUpdate, userPhotoLink, firestoreCoaches;
+  let memberForUpdate, userPhotoLink;
 
   if (matchPath.params.id && selector?.members) {
     memberForUpdate = selector?.members.filter(
@@ -108,6 +108,7 @@ const NewMemberForm = (props) => {
           const storagePhotoPath = `/${FS_MEMBERS}/${memberPathId}`;
           let downloadUrl = null;
           let uploadedFile = null;
+          let updatePhoto = null;
 
           setName(values.firstName);
           setPopUp(true);
@@ -115,7 +116,7 @@ const NewMemberForm = (props) => {
           resetForm({ values: "" });
           setFile([]);
 
-          if (files.length > 0) {
+          if (files.length > 0 && !matchPath.params.id) {
             uploadedFile = await firebase.uploadFile(
               storagePhotoPath,
               files[0],
@@ -129,7 +130,35 @@ const NewMemberForm = (props) => {
             values.userPhoto = downloadUrl;
           }
 
-          if (matchPath.params.id) {
+          //! update member data
+          if (matchPath.params.id && files.length > 0) {
+            firebase.deleteFile(`${FS_MEMBERS}/${matchPath.params.id}`);
+
+            updatePhoto = await firebase.uploadFile(
+              `/${FS_MEMBERS}/${matchPath.params.id}`,
+              files[0],
+              null,
+              {
+                name: values.firstName,
+              }
+            );
+
+            downloadUrl = await updatePhoto.uploadTaskSnapshot.ref.getDownloadURL();
+            values.userPhoto = downloadUrl;
+
+            firestore
+              .update(
+                { collection: FS_MEMBERS, doc: matchPath.params.id },
+                values
+              )
+              .then(() => {
+                console.log("Member updated");
+              })
+              .catch((error) => console.log(error));
+            console.log("uploade photo", values);
+          } else if (matchPath.params.id) {
+            console.log("without photo", values);
+
             firestore
               .update(
                 { collection: FS_MEMBERS, doc: matchPath.params.id },
@@ -148,6 +177,7 @@ const NewMemberForm = (props) => {
               },
             ];
 
+            //!crete new member
             firestore
               .set({ collection: FS_MEMBERS, doc: memberPathId }, values)
               .then(() => {
