@@ -6,9 +6,11 @@
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Features](#features)
+* [Status](#status)
 
 ## General info 
-Simple app for ordering pizza 
+App for Aikido club Admin
+  
 
 ## Technologies
 Project is created with:
@@ -18,9 +20,12 @@ Project is created with:
 * React-Router-Dom 
 * SCSS
 * Firebase
+* React-Redux-Firebase
 * React-Transition-Group
-* Redux-persist 
-
+* Formik 
+* React-dropzone
+* yup
+* BEM
 
 ## Setup
 To run this project, install it locally using yarn
@@ -32,5 +37,13 @@ $ yarn start
 ```
 
 ## Features 
-* Responsive web design
-* Mobile first 
+* Desctop only
+* Admin could create, update, delete new club members, coaches and groups
+* All data is holding in firestore db
+* Admin could mark whos participants in the train, review members statistics, 
+* add and delete additional info about members (exam info, attendence) 
+* Authhentication with email and password 
+
+## Status
+* on development stage
+
