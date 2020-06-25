@@ -10,17 +10,17 @@ export const coaches = [
 ];
 
 export const levels = [
-  { value: "", label: "" },
-  { value: "5kyu", label: "5 kyu" },
-  { value: "4kyu", label: "4 kyu" },
-  { value: "3kyu", label: "3 kyu" },
-  { value: "2kyu", label: "2 kyu" },
-  { value: "1kyu", label: "1 kyu" },
-  { value: "1danas", label: "1 danas" },
-  { value: "2danas", label: "2 danas" },
-  { value: "3danas", label: "3 danas" },
-  { value: "4danas", label: "4 danas" },
-  { value: "5danas", label: "5 danas" },
+  { value: "0_naujokas", label: "Naujokas" },
+  { value: "11_5kyu", label: "5 kyu" },
+  { value: "12_4kyu", label: "4 kyu" },
+  { value: "13_3kyu", label: "3 kyu" },
+  { value: "14_2kyu", label: "2 kyu" },
+  { value: "15_1kyu", label: "1 kyu" },
+  { value: "21_1danas", label: "1 danas" },
+  { value: "22_2danas", label: "2 danas" },
+  { value: "23_3danas", label: "3 danas" },
+  { value: "24_4danas", label: "4 danas" },
+  { value: "25_5danas", label: "5 danas" },
 ];
 
 //! New coach radio btn options
