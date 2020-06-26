@@ -15,28 +15,24 @@ const ClubMembers = () => {
   if (members) {
     return (
       <>
-        <i
-          onClick={() => {
-            setMembersFilter(false);
-          }}
-          className="fas fa-chevron-down fa-3x card-container__icon"
-        ></i>
-        <h3
-          className="u-font"
-          // onClick={() => setMembersFilter((prev) => !prev)}
-        >
-          Nustatyti Filtrus{" "}
-          {/* {membersFilter ? (
-            
-          ) : (
+        {!membersFilter ? (
+          <div className="club-members__filter">
+            <h3>Nustatyti Filtrus </h3>
             <i
-              onClick={() => {
-                setMembersFilter(false);
-              }}
-              className="fas fa-chevron-up fa-3x card-container__icon"
+              onClick={() => setMembersFilter(true)}
+              className="fas fa-chevron-down fa-3x"
             ></i>
-          )} */}
-        </h3>
+          </div>
+        ) : (
+          <div className="club-members__filter">
+            <h2>Filtruoti pagal </h2>
+            <i
+              onClick={() => setMembersFilter(false)}
+              className="fas fa-chevron-up fa-3x"
+            ></i>
+          </div>
+        )}
+
         {membersFilter && <FilterMembers />}
         {members.map((member) => (
           <MemberAndCoachCard key={member.id} {...member} />

@@ -16,8 +16,8 @@ export const GROUP = "/group";
 export const CREATE_NEW_GROUP = "/createnewgroup";
 
 //! member routes
+export const MEMBERS = "/";
 export const CREATE_NEW_MEMEBER = "/createnewmember";
-export const MEMBERS = "/dojo-sukurys";
 export const MEMBER_STATISTIC = "/memberstatistic";
 export const MEMBER_EXAM = "/memberexams";
 export const MEMBER_EDIT = "/memberedit";

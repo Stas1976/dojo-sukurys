@@ -61,7 +61,6 @@ const SelectMember = () => {
   if (groupsFs && coachFs && levelsFs) {
     return (
       <div className="u-form">
-        <h2>Filtrai</h2>
         <Formik
           initialValues={{
             groups: "",

@@ -1,0 +1,9 @@
+.club-members {
+
+  &__filter {
+    font-size: $default-font-size;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+  }
+}
