@@ -9,7 +9,7 @@ const NavItemsList = () => {
       {/* <NavItem exact link={ROUTES.HOME}>
         <div className="navbar__item">pagrindinis</div>
       </NavItem> */}
-      <NavItem link={ROUTES.MEMBERS}>
+      <NavItem exact link={ROUTES.MEMBERS}>
         <div className="navbar__item">klubo nariai</div>
       </NavItem>
       <NavItem link={ROUTES.CREATE_NEW_MEMEBER}>

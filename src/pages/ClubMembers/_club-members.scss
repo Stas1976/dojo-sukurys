@@ -2,8 +2,20 @@
 
   &__filter {
     font-size: $default-font-size;
-    border: 1px solid red;
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    color: $color-red;
+
+    h3 {
+      margin-right: 2rem;
+
+    }
+
+    i {
+      cursor: pointer;
+    }
   }
 }

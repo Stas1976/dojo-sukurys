@@ -11,6 +11,7 @@ export const memberValidationSchema = Yup.object({
   birthday: Yup.string(),
   startTrain: Yup.string(),
   group: Yup.string(),
+  level: Yup.string(),
 });
 
 export const coachValidationSchema = Yup.object({
@@ -21,4 +22,10 @@ export const coachValidationSchema = Yup.object({
   status: Yup.string(),
   level: Yup.string(),
   adminStatus: Yup.string(),
+});
+
+export const filtersValidationSchema = Yup.object({
+  group: Yup.string(),
+  level: Yup.string(),
+  coach: Yup.string(),
 });

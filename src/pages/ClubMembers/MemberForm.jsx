@@ -13,6 +13,7 @@ import {
   FS_MEMBERS,
   FS_COACH,
   FS_GROUPS,
+  FS_LEVELS,
 } from "../../constants/fireStoreColections";
 import { coaches, memberValidationSchema } from "../../db";
 
@@ -35,6 +36,7 @@ let initialValues = {
   birthday: "",
   startTrain: "",
   group: "",
+  level: "",
 };
 
 const NewMemberForm = (props) => {
@@ -42,6 +44,7 @@ const NewMemberForm = (props) => {
   const [files, setFile] = useState([]);
   const [name, setName] = useState("");
   const [firestoreGroups, setFirestoreGroups] = useState([]);
+  const [firestoreLevels, setFirestoreLevels] = useState([]);
   const [showModal, setModalState] = useState(false);
 
   const firestore = useFirestore();
@@ -53,6 +56,7 @@ const NewMemberForm = (props) => {
   useFirestoreConnect({ collection: FS_MEMBERS });
   useFirestoreConnect({ collection: FS_COACH });
   useFirestoreConnect({ collection: FS_GROUPS });
+  useFirestoreConnect({ collection: FS_LEVELS });
 
   useEffect(() => {
     files.forEach((file) => URL.revokeObjectURL(file.preview));
@@ -70,6 +74,19 @@ const NewMemberForm = (props) => {
       );
     }
   }, [selector.groups]);
+
+  useEffect(() => {
+    if (selector?.levels) {
+      setFirestoreLevels(
+        selector.levels.map((level) => {
+          return {
+            value: level.id,
+            label: `${level.label} `,
+          };
+        })
+      );
+    }
+  }, [selector.levels]);
 
   let memberForUpdate, userPhotoLink;
 
@@ -157,8 +174,6 @@ const NewMemberForm = (props) => {
               .catch((error) => console.log(error));
             console.log("uploade photo", values);
           } else if (matchPath.params.id) {
-            console.log("without photo", values);
-
             firestore
               .update(
                 { collection: FS_MEMBERS, doc: matchPath.params.id },
@@ -246,6 +261,12 @@ const NewMemberForm = (props) => {
                 label="Grupė"
                 name="group"
                 options={firestoreGroups}
+              />
+              <FormikControl
+                control="select"
+                label="Lygis"
+                name="level"
+                options={firestoreLevels}
               />
               <FormikControl
                 control="input"

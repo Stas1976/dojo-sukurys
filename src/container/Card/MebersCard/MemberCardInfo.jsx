@@ -28,7 +28,7 @@ const MemberCardInfo = ({ member, cardState }) => {
         <div>
           <p>grupė: {member.group}</p>
           <p>nario ID: {member.clubId}</p>
-          <p>lygis: {level}</p>
+          <p>lygis: {member.level}</p>
           <p>Adresas: {member.address}</p>
           <p>Treneris: {member.coachName}</p>
           <p>Kada pradėjo lankyti: {timeStamp}</p>

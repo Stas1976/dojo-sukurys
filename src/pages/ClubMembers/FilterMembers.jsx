@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useFirestoreConnect } from "react-redux-firebase";
 import {
   FS_MEMBERS,
@@ -9,6 +9,14 @@ import {
 } from "../../constants/fireStoreColections";
 import { Formik, Form } from "formik";
 import { FormikControl, Button } from "../../components";
+import { filtersValidationSchema } from "../../db/validatioSchema";
+import { MEMEBER_FILTER } from "../../redux/types";
+
+const initialValues = {
+  group: "",
+  level: "",
+  coach: "",
+};
 
 const SelectMember = () => {
   const selector = useSelector((state) => state.firestore.ordered);
@@ -20,6 +28,7 @@ const SelectMember = () => {
   const [groupsFs, setGroups] = useState([]);
   const [coachFs, setCoaches] = useState([]);
   const [levelsFs, setLevel] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setData(selector);
@@ -62,28 +71,28 @@ const SelectMember = () => {
     return (
       <div className="u-form">
         <Formik
-          initialValues={{
-            groups: "",
-            levels: "",
-            coach: "",
+          initialValues={initialValues}
+          validationSchema={filtersValidationSchema}
+          onSubmit={(values, { setSubmitting, resetForm }) => {
+            dispatch({ type: MEMEBER_FILTER, payload: values });
           }}
         >
           <Form>
             <FormikControl
               control="select"
-              label="Grupė"
-              name="groups"
+              label="Grupę"
+              name="group"
               options={groupsFs}
             />
             <FormikControl
               control="select"
-              label="Lygis"
-              name="levels"
+              label="Lygį"
+              name="level"
               options={levelsFs}
             />
             <FormikControl
               control="select"
-              label="Treneris"
+              label="Trenerį"
               name="coach"
               options={coachFs}
             />
