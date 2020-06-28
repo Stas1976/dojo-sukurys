@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/dojo-sukurys/static/css/main.7a02b1fe.chunk.css",
-    "main.js": "/dojo-sukurys/static/js/main.4c8ab59f.chunk.js",
-    "main.js.map": "/dojo-sukurys/static/js/main.4c8ab59f.chunk.js.map",
+    "main.css": "/dojo-sukurys/static/css/main.2b479a8d.chunk.css",
+    "main.js": "/dojo-sukurys/static/js/main.91fab70a.chunk.js",
+    "main.js.map": "/dojo-sukurys/static/js/main.91fab70a.chunk.js.map",
     "runtime-main.js": "/dojo-sukurys/static/js/runtime-main.9443f614.js",
     "runtime-main.js.map": "/dojo-sukurys/static/js/runtime-main.9443f614.js.map",
-    "static/js/2.87e3d405.chunk.js": "/dojo-sukurys/static/js/2.87e3d405.chunk.js",
-    "static/js/2.87e3d405.chunk.js.map": "/dojo-sukurys/static/js/2.87e3d405.chunk.js.map",
+    "static/js/2.98112b7b.chunk.js": "/dojo-sukurys/static/js/2.98112b7b.chunk.js",
+    "static/js/2.98112b7b.chunk.js.map": "/dojo-sukurys/static/js/2.98112b7b.chunk.js.map",
     "index.html": "/dojo-sukurys/index.html",
-    "precache-manifest.79fbe7dd170d8e81cd31cb6ee90d7d3e.js": "/dojo-sukurys/precache-manifest.79fbe7dd170d8e81cd31cb6ee90d7d3e.js",
+    "precache-manifest.44cd5304dd7cd763a70598f7ed7f1cf9.js": "/dojo-sukurys/precache-manifest.44cd5304dd7cd763a70598f7ed7f1cf9.js",
     "service-worker.js": "/dojo-sukurys/service-worker.js",
-    "static/css/main.7a02b1fe.chunk.css.map": "/dojo-sukurys/static/css/main.7a02b1fe.chunk.css.map",
-    "static/js/2.87e3d405.chunk.js.LICENSE.txt": "/dojo-sukurys/static/js/2.87e3d405.chunk.js.LICENSE.txt"
+    "static/css/main.2b479a8d.chunk.css.map": "/dojo-sukurys/static/css/main.2b479a8d.chunk.css.map",
+    "static/js/2.98112b7b.chunk.js.LICENSE.txt": "/dojo-sukurys/static/js/2.98112b7b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9443f614.js",
-    "static/js/2.87e3d405.chunk.js",
-    "static/css/main.7a02b1fe.chunk.css",
-    "static/js/main.4c8ab59f.chunk.js"
+    "static/js/2.98112b7b.chunk.js",
+    "static/css/main.2b479a8d.chunk.css",
+    "static/js/main.91fab70a.chunk.js"
   ]
 }
