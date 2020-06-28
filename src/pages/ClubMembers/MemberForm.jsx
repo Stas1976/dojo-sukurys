@@ -81,7 +81,7 @@ const NewMemberForm = (props) => {
         selector.levels.map((level) => {
           return {
             value: level.id,
-            label: `${level.label} `,
+            label: `${level.label}`,
           };
         })
       );
@@ -107,7 +107,7 @@ const NewMemberForm = (props) => {
     firestore
       .delete({ collection: collection, doc: doc })
       .then(() => {
-        history.push("/dojo-sukurys");
+        history.push("/");
         console.log("Doc deleted");
       })
       .catch((err) => console.log(err));

@@ -38,6 +38,12 @@ const reducers = (state = initialState, action) => {
         memberFilter: action.payload,
       };
 
+    case types.CLEAR_FILTERS:
+      return {
+        ...state,
+        memberFilter: {},
+      };
+
     default:
       return state;
   }

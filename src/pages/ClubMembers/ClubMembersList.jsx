@@ -5,17 +5,7 @@ import { useFirestoreConnect } from "react-redux-firebase";
 import { FS_MEMBERS } from "../../constants/fireStoreColections";
 import { Spinner } from "../../components";
 import { MemberAndCoachCard } from "../../container";
-import { FilterMembers } from ".";
-import { motion } from "framer-motion";
-
-const filter = {
-  hidden: { opacity: 0, height: 0 },
-  visible: {
-    y: "200px",
-    opacity: 1,
-    transition: { delay: 0.1, type: "tween" },
-  },
-};
+import FiltersForm from "./containers/FiltersForm";
 
 const ClubMembers = () => {
   useFirestoreConnect({ collection: FS_MEMBERS });
@@ -27,17 +17,14 @@ const ClubMembers = () => {
 
   if (members) {
     let filteredMembers = members;
-    console.log(members);
     if (group) {
-      filteredMembers = members.filter(
-        (member) => member.group === group || member.coachName === coach
-      );
+      filteredMembers = members.filter((member) => member.group === group);
     }
     if (coach) {
       filteredMembers = members.filter((member) => member.coachName === coach);
     }
     if (level) {
-      filteredMembers = members.filter((member) => member.levels === level);
+      filteredMembers = members.filter((member) => member.level === level);
     }
 
     return (
@@ -60,7 +47,8 @@ const ClubMembers = () => {
           </div>
         )}
 
-        {membersFilter && <FilterMembers membersFilter={membersFilter} />}
+        {membersFilter && <FiltersForm membersFilter={membersFilter} />}
+
         {filteredMembers.map((member) => (
           <MemberAndCoachCard key={member.id} {...member} />
         ))}

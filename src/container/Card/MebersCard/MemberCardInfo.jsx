@@ -3,9 +3,7 @@ import React from "react";
 import MemebrCardLinks from "./MemebrCardLinks";
 
 const MemberCardInfo = ({ member, cardState }) => {
-  let timeStamp = null;
-  let level = null;
-  let coach = null;
+  let timeStamp, level, coach;
 
   if (member.whenStartTrain) {
     timeStamp = member.whenStartTrain.toDate().toLocaleDateString("lt-LT");

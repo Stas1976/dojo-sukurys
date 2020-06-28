@@ -6,11 +6,13 @@ import {
   FS_COACH,
   FS_GROUPS,
   FS_LEVELS,
-} from "../../constants/fireStoreColections";
+} from "../../../constants/fireStoreColections";
 import { Formik, Form } from "formik";
-import { FormikControl, Button } from "../../components";
-import { filtersValidationSchema } from "../../db/validatioSchema";
-import { MEMEBER_FILTER } from "../../redux/types";
+import { FormikControl, Button } from "../../../components";
+import { filtersValidationSchema } from "../../../db/validatioSchema";
+import { MEMEBER_FILTER, CLEAR_FILTERS } from "../../../redux/types";
+import ClearFiltersValue from "./ClearFiltersValue";
+import ActiveFilterValues from "./ActiveFilterValues";
 
 const initialValues = {
   group: "",
@@ -18,8 +20,9 @@ const initialValues = {
   coach: "",
 };
 
-const SelectMember = () => {
+const FiltersForm = () => {
   const selector = useSelector((state) => state.firestore.ordered);
+  const memberFilter = useSelector((state) => state.reducers.memberFilter);
   useFirestoreConnect({ collection: FS_GROUPS });
   useFirestoreConnect({ collection: FS_MEMBERS });
   useFirestoreConnect({ collection: FS_LEVELS });
@@ -33,7 +36,7 @@ const SelectMember = () => {
   useEffect(() => {
     setData(selector);
 
-    const { groups, levels } = data;
+    const { groups } = data;
 
     if (groups) {
       setGroups(
@@ -45,9 +48,9 @@ const SelectMember = () => {
         })
       );
     }
-    if (levels) {
+    if (selector?.levels) {
       setLevel(
-        levels.map((level) => {
+        selector.levels.map((level) => {
           return {
             value: level.id,
             label: `${level.label}`,
@@ -67,14 +70,17 @@ const SelectMember = () => {
     }
   }, [selector]);
 
+  const { level, coach, group } = memberFilter;
+
   if (groupsFs && coachFs && levelsFs) {
     return (
-      <div className="u-form">
+      <div className="u-form filters">
         <Formik
           initialValues={initialValues}
           validationSchema={filtersValidationSchema}
           onSubmit={(values, { setSubmitting, resetForm }) => {
             dispatch({ type: MEMEBER_FILTER, payload: values });
+            resetForm();
           }}
         >
           <Form>
@@ -96,7 +102,11 @@ const SelectMember = () => {
               name="coach"
               options={coachFs}
             />
-            <Button type="submit">Filtruoti</Button>
+            <div className="filter__btn-block ">
+              <Button type="submit">Filtruoti</Button>
+              {group || level || coach ? <ClearFiltersValue /> : null}
+              {group || level || coach ? <ActiveFilterValues /> : null}
+            </div>
           </Form>
         </Formik>
       </div>
@@ -105,4 +115,4 @@ const SelectMember = () => {
   return <div>Loading...</div>;
 };
 
-export default SelectMember;
+export default FiltersForm;

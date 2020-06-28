@@ -28,7 +28,7 @@ const NavItemsList = () => {
         <div className="navbar__item">statistika</div>
       </NavItem>
       <NavItem link={ROUTES.SETTINGS}>
-        <div className="navbar__item">įrankiai</div>
+        <div className="navbar__item">Sand Box</div>
       </NavItem>
     </div>
   );

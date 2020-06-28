@@ -19,3 +19,10 @@
     }
   }
 }
+
+.filter {
+  &__btn-block {
+    display: flex;
+    flex-direction: column;
+  }
+}
