@@ -15,7 +15,7 @@ import {
   FS_GROUPS,
   FS_LEVELS,
 } from "../../constants/fireStoreColections";
-import { coaches, memberValidationSchema } from "../../db";
+import { memberValidationSchema } from "../../db";
 
 import {
   Button,
@@ -45,6 +45,7 @@ const NewMemberForm = (props) => {
   const [name, setName] = useState("");
   const [firestoreGroups, setFirestoreGroups] = useState([]);
   const [firestoreLevels, setFirestoreLevels] = useState([]);
+  const [firestoreCoach, setFirestoreCoach] = useState([]);
   const [showModal, setModalState] = useState(false);
 
   const firestore = useFirestore();
@@ -87,6 +88,19 @@ const NewMemberForm = (props) => {
       );
     }
   }, [selector.levels]);
+
+  useEffect(() => {
+    if (selector?.coaches) {
+      setFirestoreCoach(
+        selector.coaches.map((coach) => {
+          return {
+            value: coach.id,
+            label: `${coach.firstName} ${coach.lastName}`,
+          };
+        })
+      );
+    }
+  }, [selector.coaches]);
 
   let memberForUpdate, userPhotoLink;
 
@@ -254,7 +268,7 @@ const NewMemberForm = (props) => {
                 control="select"
                 label="Treneris"
                 name="coachName"
-                options={coaches}
+                options={firestoreCoach}
               />
               <FormikControl
                 control="select"

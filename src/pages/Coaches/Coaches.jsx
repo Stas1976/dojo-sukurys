@@ -12,6 +12,7 @@ const ClubCoachesList = () => {
   useFirestoreConnect({ collection: FS_COACH });
 
   if (coaches) {
+    console.log(coaches);
     return (
       <div className="coaches">
         <div className="coaches__link">
@@ -21,9 +22,11 @@ const ClubCoachesList = () => {
             </h3>
           </Link>
         </div>
-        {coaches.map((coach) => (
-          <MemberAndCoachCard key={coach.id} coach {...coach} />
-        ))}
+        {coaches
+          .filter((coach) => coach.lastName !== "Treneris")
+          .map((coach) => (
+            <MemberAndCoachCard key={coach.id} coach {...coach} />
+          ))}
       </div>
     );
   }

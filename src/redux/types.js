@@ -5,3 +5,5 @@ export const MODAL_OFF = "MODAL_OFF";
 export const MODAL_ON = "MODAL_ON";
 export const MEMEBER_FILTER = "MEMEBER_FILTER";
 export const CLEAR_FILTERS = "CLEAR_FILTERS";
+export const RESET_FILTER = "RESET_FILTER";
+export const SANDBOX_FILTER = "SANDBOX_FILTER";

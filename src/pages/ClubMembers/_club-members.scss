@@ -25,4 +25,35 @@
     display: flex;
     flex-direction: column;
   }
+
+  &__active {
+    font-size: $default-font-size;
+    width: 50%;
+    margin: auto;
+
+    &--list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    &--filters {
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $color-green;
+      margin: 1rem 1rem;
+      border-radius: 4px;
+      color: $color-white;
+      width: 20rem;
+      text-align: left;
+      // max-width: 50rem;
+
+      i {
+        cursor: pointer;
+        margin: 1rem;
+      }
+    }
+  }
 }

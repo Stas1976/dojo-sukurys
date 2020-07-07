@@ -10,7 +10,7 @@ import {
 import { Formik, Form } from "formik";
 import { FormikControl, Button } from "../../../components";
 import { filtersValidationSchema } from "../../../db/validatioSchema";
-import { MEMEBER_FILTER, CLEAR_FILTERS } from "../../../redux/types";
+import { MEMEBER_FILTER } from "../../../redux/types";
 import ClearFiltersValue from "./ClearFiltersValue";
 import ActiveFilterValues from "./ActiveFilterValues";
 
@@ -74,42 +74,44 @@ const FiltersForm = () => {
 
   if (groupsFs && coachFs && levelsFs) {
     return (
-      <div className="u-form filters">
-        <Formik
-          initialValues={initialValues}
-          validationSchema={filtersValidationSchema}
-          onSubmit={(values, { setSubmitting, resetForm }) => {
-            dispatch({ type: MEMEBER_FILTER, payload: values });
-            resetForm();
-          }}
-        >
-          <Form>
-            <FormikControl
-              control="select"
-              label="Grupę"
-              name="group"
-              options={groupsFs}
-            />
-            <FormikControl
-              control="select"
-              label="Lygį"
-              name="level"
-              options={levelsFs}
-            />
-            <FormikControl
-              control="select"
-              label="Trenerį"
-              name="coach"
-              options={coachFs}
-            />
-            <div className="filter__btn-block ">
-              <Button type="submit">Filtruoti</Button>
-              {group || level || coach ? <ClearFiltersValue /> : null}
-              {group || level || coach ? <ActiveFilterValues /> : null}
-            </div>
-          </Form>
-        </Formik>
-      </div>
+      <>
+        <div className="u-form filters">
+          <Formik
+            initialValues={initialValues}
+            validationSchema={filtersValidationSchema}
+            onSubmit={(values, { setSubmitting, resetForm }) => {
+              dispatch({ type: MEMEBER_FILTER, payload: values });
+              resetForm();
+            }}
+          >
+            <Form>
+              <FormikControl
+                control="select"
+                label="Grupę"
+                name="group"
+                options={groupsFs}
+              />
+              <FormikControl
+                control="select"
+                label="Lygį"
+                name="level"
+                options={levelsFs}
+              />
+              <FormikControl
+                control="select"
+                label="Trenerį"
+                name="coach"
+                options={coachFs}
+              />
+              <div className="filter__btn-block ">
+                <Button type="submit">Filtruoti</Button>
+                {group || level || coach ? <ClearFiltersValue /> : null}
+              </div>
+            </Form>
+          </Formik>
+        </div>
+        {group || level || coach ? <ActiveFilterValues /> : null}
+      </>
     );
   }
   return <div>Loading...</div>;

@@ -17,15 +17,20 @@ const ClubMembers = () => {
 
   if (members) {
     let filteredMembers = members;
-    if (group) {
-      filteredMembers = members.filter((member) => member.group === group);
+    if (group || coach || level) {
+      filteredMembers = members.filter(
+        (member) =>
+          member.group === group ||
+          member.coach === coach ||
+          member.level === level
+      );
     }
-    if (coach) {
-      filteredMembers = members.filter((member) => member.coachName === coach);
-    }
-    if (level) {
-      filteredMembers = members.filter((member) => member.level === level);
-    }
+    // if (coach) {
+    //   filteredMembers = members.filter((member) => member.coachName === coach);
+    // }
+    // if (level) {
+    //   filteredMembers = members.filter((member) => member.level === level);
+    // }
 
     return (
       <>

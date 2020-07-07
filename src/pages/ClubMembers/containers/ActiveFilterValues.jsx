@@ -1,5 +1,6 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { RESET_FILTER } from "../../../redux/types";
 
 const ActiveFilterValues = () => {
   const memberFilter = useSelector((state) => state.reducers.memberFilter);
@@ -11,22 +12,20 @@ const ActiveFilterValues = () => {
       filterProps.push(memberFilter[prop]);
     }
   }
-  console.log(filterProps);
 
   return (
-    <>
+    <div className="filter__active">
       <h3>Aktivus filtrai</h3>
-      <ul>
+      <ul className="filter__active--list">
         {filterProps
           .filter((item) => item !== "")
           .map((item) => (
-            <li key={item}>
+            <li className="filter__active--filters" key={item}>
               {item}
-              <i className="far fa-times-circle fa-lg"></i>
             </li>
           ))}
       </ul>
-    </>
+    </div>
   );
 };
 

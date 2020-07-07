@@ -13,3 +13,8 @@ export const modalOff = () => ({
 export const modalOn = () => ({
   type: types.MODAL_ON,
 });
+
+// export const sandBboxFilter = (payload) => ({
+//   type: types.SANDBOX_FILTER,
+//   payload,
+// });

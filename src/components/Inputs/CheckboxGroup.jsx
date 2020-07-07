@@ -4,6 +4,7 @@ import ErrorText from "./ErrorText";
 
 function CheckboxGroup(props) {
   const { label, name, options, ...rest } = props;
+
   return (
     <div className="inputs">
       <label>{label}</label>
