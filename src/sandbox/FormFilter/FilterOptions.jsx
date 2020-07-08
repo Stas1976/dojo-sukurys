@@ -1,7 +1,6 @@
 import React from "react";
 
 const FilterOptions = ({
-  data,
   benderOptions,
   nationOptions,
   ageOptions,
@@ -10,6 +9,7 @@ const FilterOptions = ({
   const handleChangeOption = (type, event) => {
     const value = event.target.value;
     changeOption(value, type);
+    console.log(type);
   };
 
   return (

@@ -37,6 +37,7 @@ const FiltersForm = () => {
     setData(selector);
 
     const { groups } = data;
+    console.log(groups);
 
     if (groups) {
       setGroups(
