@@ -21,9 +21,13 @@ const ClubCoachesList = () => {
             </h3>
           </Link>
         </div>
-        {coaches.map((coach) => (
-          <MemberAndCoachCard key={coach.id} coach {...coach} />
-        ))}
+        {coaches
+          .filter((coach) => {
+            return coach.firstName !== "";
+          })
+          .map((coach) => (
+            <MemberAndCoachCard key={coach.id} coach {...coach} />
+          ))}
       </div>
     );
   }
