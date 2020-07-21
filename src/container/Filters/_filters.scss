@@ -1,0 +1,54 @@
+.filters {
+  margin: auto;
+  font-size: $default-font-size;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    display: flex;
+    margin: auto;
+    color: $color-red;
+
+    i {
+      margin-left: 1rem;
+      cursor: pointer;
+    }
+  }
+
+  &__container--hide {
+    height: 0;
+    opacity: 0;
+    animation: myHide .3s;
+
+    @keyframes myHide {
+      from {
+        height: 20rem;
+        opacity: 1;
+      }
+
+      to {
+        height: 0;
+        opacity: 0;
+      }
+    }
+  }
+
+  &__container--show {
+    width: 50rem;
+    min-height: 5rem;
+    margin: auto;
+    animation: myClick .3s;
+
+    @keyframes myClick {
+      from {
+        height: 0px;
+        opacity: 0;
+      }
+
+      to {
+        height: 20rem;
+        opacity: 1;
+      }
+    }
+  }
+}

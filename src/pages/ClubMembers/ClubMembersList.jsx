@@ -5,6 +5,7 @@ import { useFirestoreConnect } from "react-redux-firebase";
 import { FS_MEMBERS } from "../../constants/fireStoreColections";
 import { Spinner } from "../../components";
 import { MemberAndCoachCard } from "../../container";
+import { ClubMembersFilters } from "../../container";
 
 const ClubMembers = () => {
   useFirestoreConnect({ collection: FS_MEMBERS });
@@ -13,6 +14,7 @@ const ClubMembers = () => {
   if (members) {
     return (
       <>
+        <ClubMembersFilters members={members} />
         {members.map((member) => (
           <MemberAndCoachCard key={member.id} {...member} />
         ))}
