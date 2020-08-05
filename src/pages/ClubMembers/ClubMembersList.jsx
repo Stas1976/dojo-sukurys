@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useFirestoreConnect } from "react-redux-firebase";
 
@@ -8,16 +8,22 @@ import { MemberAndCoachCard } from "../../container";
 import { ClubMembersFilters } from "../../container";
 
 const ClubMembers = () => {
+  const [membersList, setMembersList] = useState(null);
   useFirestoreConnect({ collection: FS_MEMBERS });
   const members = useSelector((state) => state.firestore.ordered[FS_MEMBERS]);
+
+  useEffect(() => {
+    setMembersList(members);
+  }, [members]);
 
   if (members) {
     return (
       <>
         <ClubMembersFilters members={members} />
-        {members.map((member) => (
-          <MemberAndCoachCard key={member.id} {...member} />
-        ))}
+        {membersList &&
+          membersList.map((member) => (
+            <MemberAndCoachCard key={member.id} {...member} />
+          ))}
       </>
     );
   }

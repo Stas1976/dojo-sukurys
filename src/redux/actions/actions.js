@@ -13,3 +13,8 @@ export const modalOff = () => ({
 export const modalOn = () => ({
   type: types.MODAL_ON,
 });
+
+export const filterMemberList = (payload) => ({
+  type: types.FILTERED_MEMBERS,
+  payload,
+});

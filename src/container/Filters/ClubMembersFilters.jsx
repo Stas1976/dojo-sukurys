@@ -1,27 +1,20 @@
-import React, { useState } from "react";
-import Filters from "./Filters";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { filterMemberList } from "../../redux/actions/actions";
 
-const ClubMembersFilters = ({ members }) => {
-  const [chevronState, setChevronState] = useState(false);
-  return (
-    <div className="filters">
-      <div className="filters__header">
-        <h2>Narių Filtravimas</h2>
-        {chevronState ? (
-          <i
-            onClick={() => setChevronState(false)}
-            className="fas fa-chevron-up fa-3x "
-          />
-        ) : (
-          <i
-            onClick={() => setChevronState(true)}
-            className=" fas fa-chevron-down fa-3x "
-          />
-        )}
+class ClubMembersFilters extends Component {
+  render() {
+    const { members, membersList } = this.props;
+
+    test = members.filter((member) => {
+      return member.firstName !== "Nemunas";
+    });
+    return (
+      <div>
+        <h1>Filters</h1>
       </div>
-      <Filters chevronState={chevronState} members={members} />
-    </div>
-  );
-};
+    );
+  }
+}
 
-export default ClubMembersFilters;
+export default connect(null, filterMemberList)(ClubMembersFilters);

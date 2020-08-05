@@ -3,7 +3,8 @@ import * as types from "../types";
 const initialState = {
   data: [],
   modalState: false,
-  memberFilter: {},
+  // memberFilter: {},
+  filteredMembersList: [],
 };
 
 const reducers = (state = initialState, action) => {
@@ -32,17 +33,22 @@ const reducers = (state = initialState, action) => {
         modalState: true,
       };
 
-    case types.MEMEBER_FILTER:
+    case types.FILTERED_MEMBERS:
       return {
         ...state,
-        memberFilter: action.payload,
+        filteredMembersList: action.payload,
       };
+    // case types.MEMEBER_FILTER:
+    //   return {
+    //     ...state,
+    //     memberFilter: action.payload,
+    //   };
 
-    case types.CLEAR_FILTERS:
-      return {
-        ...state,
-        memberFilter: {},
-      };
+    // case types.CLEAR_FILTERS:
+    //   return {
+    //     ...state,
+    //     memberFilter: {},
+    //   };
 
     default:
       return state;
