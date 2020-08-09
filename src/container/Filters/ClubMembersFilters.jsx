@@ -4,11 +4,11 @@ import { filterMemberList } from "../../redux/actions/actions";
 
 class ClubMembersFilters extends Component {
   render() {
-    const { members, membersList } = this.props;
+    // const { members, membersList } = this.props;
 
-    test = members.filter((member) => {
-      return member.firstName !== "Nemunas";
-    });
+    // const test = members.filter((member) => {
+    //   return member.firstName !== "Nemunas";
+    // });
     return (
       <div>
         <h1>Filters</h1>
