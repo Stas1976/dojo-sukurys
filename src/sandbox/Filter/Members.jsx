@@ -34,6 +34,8 @@ class Members extends Component {
 
     ["age", "level", "group"].forEach((filterBy) => {
       let filterValue = state[filterBy];
+      console.log("Members Class ", filterValue);
+
       if (filterValue) {
         filteredItems = filteredItems.filter((item) => {
           return item[filterBy] === filterValue;

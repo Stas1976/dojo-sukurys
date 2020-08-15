@@ -4,7 +4,6 @@ const FilterOption = ({ levelArray, ageArray, groupArray, changeOption }) => {
   const handleChangeOption = (type, event) => {
     const { value } = event.target;
     changeOption(value, type);
-    console.log(event);
   };
 
   return (

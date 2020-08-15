@@ -7,7 +7,8 @@ const FilterItems = ({ data }) => {
       {data.map(function (item, index) {
         return (
           <div className="sandbox__filter-item" key={index}>
-            {item.name}
+            Name {item.name}, Age: {item.age}, level: {item.level}, group:{" "}
+            {item.group},
           </div>
         );
       })}

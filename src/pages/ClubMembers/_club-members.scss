@@ -1,1 +1,19 @@
-.club-members {}
+.club-members {
+  cursor: pointer;
+  color: $color-red;
+  width: 40%;
+  margin: auto;
+  font-size: 1.2rem;
+
+  &__filters {
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px $color-green-disabled;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__chevron {
+    margin-left: 3rem;
+  }
+}
