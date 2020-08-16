@@ -39,28 +39,14 @@ const ClubMembers = () => {
   ["coach", "level", "group"].forEach((filterBy) => {
     let filterValue = filters[filterBy];
 
+    console.log(filterValue);
+
     if (filterValue) {
       filteredMembers = filteredMembers.filter((item) => {
         return item[filterBy] === filterValue;
       });
     }
   });
-
-  let coachArray, levelArray, groupArray;
-
-  if (members) {
-    coachArray = members.map((item) => item.coachName);
-    coachArray = coachArray.filter((val, i, self) => self.indexOf(val === i));
-    coachArray.unshift("");
-
-    levelArray = members.map((item) => item.level);
-    levelArray = levelArray.filter((val, i, self) => self.indexOf(val === i));
-    levelArray.unshift("");
-
-    groupArray = members.map((item) => item.group);
-    groupArray = groupArray.filter((val, i, self) => self.indexOf(val === i));
-    groupArray.unshift("");
-  }
 
   if (members) {
     return (
@@ -81,13 +67,10 @@ const ClubMembers = () => {
         {filtersState && (
           <FilterOptions
             members={members}
-            coachArray={coachArray}
-            levelArray={levelArray}
-            groupArray={groupArray}
             changeOption={filterItems.bind(this)}
           />
         )}
-        {members.map((member) => (
+        {filteredMembers.map((member) => (
           <MemberAndCoachCard key={member.id} {...member} />
         ))}
       </>
